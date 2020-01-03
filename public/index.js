@@ -14,3 +14,12 @@ function navio() {
     // nav.classList.add('nav-active')
   }
 }
+
+function navigation(type) {
+  if (type === 'home') {
+    document.getElementById('projects').classList.remove('active')
+    document.getElementById('contact').classList.remove('active')
+  } else {
+    document.getElementById(type).classList.add('active')
+  }
+}
