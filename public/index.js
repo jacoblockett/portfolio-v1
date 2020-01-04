@@ -1,25 +1,20 @@
-let nav, ham
-
-function navio() {
-  // nav = nav || document.getElementById('dropdown-nav')
-  ham = ham || document.getElementById('hamburger')
-
-  if (ham.classList.contains('is-active')) {
-    ham.classList.remove('is-active')
-    // nav.classList.remove('nav-active')
-    // nav.classList.add('nav-inactive')
-  } else {
-    ham.classList.add('is-active')
-    // nav.classList.remove('nav-inactive')
-    // nav.classList.add('nav-active')
-  }
-}
-
 function navigation(type) {
+  const body = document.getElementsByTagName('body')[0]
+  
   if (type === 'home') {
-    document.getElementById('projects').classList.remove('active')
-    document.getElementById('contact').classList.remove('active')
+    // body.classList.remove('inactive')
+    setTimeout(() => {
+      body.classList.remove('inactive')
+    }, 500)
+    document.getElementById('projects').classList.remove('active', 'scrollable')
+    document.getElementById('contact').classList.remove('active', 'scrollable')
   } else {
-    document.getElementById(type).classList.add('active')
+    const el = document.getElementById(type)
+    
+    body.classList.add('inactive')
+    el.classList.add('active')
+    setTimeout(() => {
+      el.classList.add('scrollable')
+    }, 500)
   }
 }
