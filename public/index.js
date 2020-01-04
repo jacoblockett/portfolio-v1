@@ -2,7 +2,6 @@ function navigation(type) {
   const body = document.getElementsByTagName('body')[0]
   
   if (type === 'home') {
-    // body.classList.remove('inactive')
     setTimeout(() => {
       body.classList.remove('inactive')
     }, 500)
