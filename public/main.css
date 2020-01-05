@@ -60,7 +60,6 @@ body {
   overflow-y: auto;
 }
 .back-nav {
-  width: 100vw;
   padding: 0 1vh;
   height: calc(10vh - 2vw);
   display: flex;
@@ -76,17 +75,20 @@ body {
   fill: #393939;
   height: 100%;
 }
-.form-container {
+.form-container,
+.projects {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
 }
-.msg-icon {
+.msg-icon,
+.work-icon {
   height: 50px;
 }
-.msg-icon svg {
+.msg-icon svg,
+.work-icon svg {
   fill: #393939;
   height: 100%;
 }
@@ -147,6 +149,49 @@ body {
   color: #f5f5f5;
   fill: #f5f5f5;
 }
+.projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.project {
+  max-width: 500px;
+  width: 70%;
+  margin-top: 5vh;
+}
+.project img {
+  width: 100%;
+  box-shadow: 0 2px 5px #39393925;
+  border-radius: 10px;
+}
+hr {
+  border: 1px solid #39393910;
+  border-radius: 100%;
+  margin: 3vh 0 5vh;
+  max-width: 500px;
+  width: 80%;
+}
+.project-btns {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50px;
+  margin-top: 1vh;
+}
+.project-btns a,
+.project-btns svg {
+  height: 100%;
+}
+.project-btns a {
+  padding: 1.5vh;
+}
+.project-btns a:hover svg {
+  fill: blue;
+}
+.project-btns svg {
+  fill: #393939;
+}
 @media only screen and (min-width: 768px) {
   .container {
     flex-direction: row;
@@ -154,7 +199,8 @@ body {
   .btn-container {
     margin: 0 5vw;
   }
-  .form-container {
+  .form-container,
+  .projects {
     margin-top: 100px;
   }
   .input-container {
