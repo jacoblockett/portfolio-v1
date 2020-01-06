@@ -87,12 +87,15 @@ body {
 .work-icon {
   height: 50px;
 }
+.work-icon {
+  margin-bottom: 5vw;
+}
 .msg-icon svg,
 .work-icon svg {
   fill: #393939;
   height: 100%;
 }
-.input-container {  
+.input-container {
   width: 70%;
   margin-top: 5vh;
   max-width: 600px;
@@ -184,10 +187,10 @@ hr {
   height: 100%;
 }
 .project-btns a {
-  padding: 1.5vh;
+  padding: 1em;
 }
 .project-btns a:hover svg {
-  fill: blue;
+  fill: #8685EF;
 }
 .project-btns svg {
   fill: #393939;
