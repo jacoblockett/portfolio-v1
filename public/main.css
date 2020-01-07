@@ -1,5 +1,6 @@
 *, *::before, *::after {
   box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
 }
 html, body {
   margin: 0;
@@ -7,8 +8,14 @@ html, body {
 body {
   background-color: #f5f5f5;
 }
-.inactive {
-  background-color: #BFBFBF!important;
+.inactive:after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #BFBFBF90;
 }
 .container {
   display: flex;
@@ -36,11 +43,12 @@ body {
   padding: 20px;
 }
 .btn-container:hover .btn {
-  fill: #555;
+  fill: #8685EF;
   padding: 0 20px 40px 20px;
 }
 .projects-container,
-.contact-container {
+.contact-container,
+.details-container {
   overflow-y: hidden;
   width: 100vw;
   position: fixed;
@@ -51,7 +59,7 @@ body {
   transition-property: top;
   transition-duration: .5s;
   transition-timing-function: ease-in-out;
-  padding-bottom: 20px;
+  padding-bottom: 10vh;
 }
 .active {
   top: 0;
@@ -64,6 +72,11 @@ body {
   height: calc(10vh - 2vw);
   display: flex;
   align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 5px #39393925;
 }
 .back-btn-container {
   background-color: transparent;
@@ -71,9 +84,15 @@ body {
   height: 75%;
   cursor: pointer;
 }
+.back-btn-container:hover .back-btn {
+  fill: #8685EF;
+}
 .back-btn {
   fill: #393939;
   height: 100%;
+  transition-property: fill;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
 }
 .form-container,
 .projects {
@@ -112,7 +131,6 @@ body {
   margin-top: 3vh;
   width: 100%;
   background-color: #f5f5f5;
-  font-family: 'Nunito', sans-serif;
   font-weight: bold;
   font-size: 14px;
 }
@@ -144,7 +162,6 @@ body {
   height: 100%;
 }
 .submit span {
-  font-family: 'Nunito', sans-serif;
   font-weight: bold;
 }
 .submit:hover {
@@ -183,17 +200,64 @@ hr {
   margin-top: 1vh;
 }
 .project-btns a,
+.project-btns button,
 .project-btns svg {
   height: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition-property: fill;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
 }
+.project-btns button,
 .project-btns a {
-  padding: 1em;
+  padding: 14px;
 }
+.project-btns button:hover svg,
 .project-btns a:hover svg {
   fill: #8685EF;
 }
 .project-btns svg {
   fill: #393939;
+}
+.details-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+  padding: 0 5vw;
+  text-align: center;
+}
+.details-inner img {
+  width: 90%;
+  max-width: 750px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px #39393925;
+}
+.details-languages {
+  margin-top: 5vh;
+}
+.details-btns {
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+.details-btns a,
+.details-btns svg {
+  height: 100%;
+  transition-property: fill;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+}
+.details-btns a {
+  padding: 1em;
+}
+.details-btns a:hover svg {
+  fill: #8685EF;
 }
 @media only screen and (min-width: 768px) {
   .container {
@@ -224,6 +288,14 @@ hr {
   }
   .input-container textarea {
     height: 250px;
+  }
+  .projects-container,
+  .contact-container,
+  .details-container {
+    padding-bottom: 5vh;
+  }
+  .details-inner p {
+    width: 50%;
   }
 }
 
