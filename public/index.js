@@ -18,40 +18,39 @@ const projects = {
     'https://github.com/huntinghawk1415/Taggen'
   ),
   forumApp: setInnerHTML(
-    '',
-    '',
-    '',
-    '',
-    [],
-    '',
-    ''
+    'forum-app',
+    'Forum App',
+    'Forum App',
+    'Provided the back-end API, created an application that allows a user to post topics and comments for others to see.',
+    ['React', 'Redux', 'Bootstrap', 'Express'],
+    'https://github.com/huntinghawk1415/ReactND-Readable'
   ),
   simonGame: setInnerHTML(
-    '',
-    '',
-    '',
-    '',
-    [],
-    '',
-    ''
+    'simon',
+    'Simon Game',
+    'Simon Game',
+    'The popular Simon memory game! This game uses colors and sounds to test your recall. Originally created this application <a href="https://codepen.io/HuntingHawk/full/VpEroM/" rel="noreferrer noopener" target="_blank">here</a> as required courswork to recieve certification through FreeCodeCamp. I then created the current version in my freetime as a challenge to see how fast and optimal I could get it done.',
+    ['HTML', 'CSS', 'JavaScript'],
+    null,
+    'https://codepen.io/HuntingHawk/full/mNPVgj'
   ),
   fiveGuys: setInnerHTML(
-    '',
-    '',
-    '',
-    '',
-    [],
-    '',
-    ''
+    'fg-landing',
+    'Five Guys Landing Redesign',
+    'Five Guys Landing Redesign',
+    'For this project I was tasked with redesigning the landing page for a website. I chose Five Guys because although they have a pretty well designed website, I thought it had a bit of an overload of information on the front page. The redesign consolidates everything into two buttons centered on a quality picture of what they\'re all about.',
+    ['React', 'CSS'],
+    null,
+    'https://codepen.io/HuntingHawk/full/ELPwPx'
   ),
   drumMachine: setInnerHTML(
-    '',
-    '',
-    '',
-    '',
-    [],
-    '',
-    ''
+    'drums',
+    'Drum Machine',
+    'Drum Machine',
+    'A basic drum machine application that allows the user to create their own sound. Click on a button or type the corresponding letter to activate each sound.',
+    ['React', 'CSS'],
+    null,
+    'https://codepen.io/HuntingHawk/full/ejbvLZ'
   )
 }
 
