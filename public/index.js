@@ -134,7 +134,10 @@ async function send() {
   if (name.value.length > 0 && emailReg.test(email.value) && message.value.length > 0) {
     await fetch('https://jl-mailer.herokuapp.com/', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
       referrer: 'no-referrer',
       body: JSON.stringify({
         name: name.value,
