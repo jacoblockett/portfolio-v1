@@ -125,18 +125,17 @@ function navigate(type, project) {
   }
 }
 
-async function send() {
+function send() {
   const name = document.getElementById('contact-name')
   const email = document.getElementById('contact-email')
   const message = document.getElementById('contact-message')
   const emailReg = new RegExp(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/, 'i')
 
   if (name.value.length > 0 && emailReg.test(email.value) && message.value.length > 0) {
-    await fetch('https://jl-mailer.herokuapp.com/', {
+    fetch('https://jl-mailer.herokuapp.com/', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
+        'Content-Type': 'application/json'
       },
       referrer: 'no-referrer',
       body: JSON.stringify({
@@ -146,9 +145,13 @@ async function send() {
         msg: message.value
       })
     })
-    alert(`Thank you for your message, ${name.value}! I'll try to get back to you as soon as possible!`)
-    // const json = await response.json()
+
+    name.value = ''
+    email.value = ''
+    message.value = ''
+
+    return alert(`Thank you for your message, ${name.value}! I'll try to get back to you as soon as possible!`)
   } else {
-    alert('Please make sure you\'ve filled out all of the fields correctly. (No blanks, and email must be a real email address)')
+    return alert('Please make sure you\'ve filled out all of the fields correctly. (No blanks, and email must be a real email address)')
   }
 }
