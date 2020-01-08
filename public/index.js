@@ -131,7 +131,7 @@ async function send() {
   const message = document.getElementById('contact-message')
   const emailReg = new RegExp(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/, 'i')
 
-  if (emailReg.test(email.value)) {
+  if (name.value.length > 0 && emailReg.test(email.value) && message.value.length > 0) {
     await fetch('https://jl-mailer.herokuapp.com/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -143,8 +143,9 @@ async function send() {
         msg: message.value
       })
     })
+    alert(`Thank you for your message, ${name.value}! I'll try to get back to you as soon as possible!`)
     // const json = await response.json()
   } else {
-    alert('Bad email!')
+    alert('Please make sure you\'ve filled out all of the fields correctly. (No blanks, and email must be a real email address)')
   }
 }
