@@ -145,12 +145,14 @@ function send() {
         msg: message.value
       })
     })
+    
+    alert(`Thank you for your message, ${name.value}! I'll try to get back to you as soon as possible!`)
 
     name.value = ''
     email.value = ''
     message.value = ''
 
-    return alert(`Thank you for your message, ${name.value}! I'll try to get back to you as soon as possible!`)
+    return
   } else {
     return alert('Please make sure you\'ve filled out all of the fields correctly. (No blanks, and email must be a real email address)')
   }
